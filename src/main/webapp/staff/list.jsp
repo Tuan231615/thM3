@@ -13,6 +13,7 @@
 </head>
 <body>
 <h2>Staff manager</h2>
+<a href="/staffs?action=create">Create staff</a>
 <table border="1">
     <tr>
         <td>id</td>
@@ -21,7 +22,7 @@
         <td>address</td>
         <td>phone number</td>
         <td>Salary</td>
-        <td>Derpartment</td>
+        <td>Department</td>
         <td>Action</td>
     </tr>
     <c:forEach var="staff" items="${staffs}">
@@ -33,6 +34,10 @@
             <td><c:out value="${staff.phoneNumber}"/></td>
             <td><c:out value="${staff.salary}"/></td>
             <td><c:out value="${staff.department.name}"/></td>
+            <td>
+                <a href="/staffs?action=edit&id=${staff.id}">Edit</a>
+                <a href="/staffs?action=delete&id=${staff.id}">Delete</a>
+            </td>
         </tr>
     </c:forEach>
 </table>
